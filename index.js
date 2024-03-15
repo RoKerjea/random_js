@@ -13,12 +13,34 @@ function getSalutation() {
     }
 }
 // console.log("hello world");
+function getTarget() {
+    switch (getRandomInt(3)) {
+        case 0:
+            return("World");
+        case 1:
+            return("Friend");
+        case 2:
+            return("Guys");
+    }
+}
+
+
+function getSymbol() {
+    switch (getRandomInt(3)) {
+        case 0:
+            return(".");
+        case 1:
+            return("!");
+        case 2:
+            return(";)");
+    }
+}
 
 async function main() {
 	
     const string1 = getSalutation();
-    const string2 = "World";
-    const string3 = "!";
+    const string2 = getTarget();
+    const string3 = getSymbol();
     const res = string1  + " " +string2 + " " + string3;
     console.log(res);   
 }
