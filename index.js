@@ -2,46 +2,41 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+const salutation = [
+    "Hello",
+    "Bonjour",
+    "Demat",
+];
+
+const target = [
+    "World",
+    "Friend",
+    "Guys",
+];
+
+const end = [
+    ".",
+    "!",
+    ";)",
+];
+
 function getSalutation() {
-    switch (getRandomInt(3)) {
-        case 0:
-            return("Hello");
-        case 1:
-            return("Bonjour");
-        case 2:
-            return("Demat");
-    }
+    salutationString = salutation[getRandomInt(salutation.length)];
+    return salutationString;
 }
 // console.log("hello world");
 function getTarget() {
-    switch (getRandomInt(3)) {
-        case 0:
-            return("World");
-        case 1:
-            return("Friend");
-        case 2:
-            return("Guys");
-    }
+    targetString = target[getRandomInt(target.length)];
+    return targetString;
 }
 
-
 function getSymbol() {
-    switch (getRandomInt(3)) {
-        case 0:
-            return(".");
-        case 1:
-            return("!");
-        case 2:
-            return(";)");
-    }
+    endChar = end[getRandomInt(end.length)];
+    return endChar;
 }
 
 async function main() {
-	
-    const string1 = getSalutation();
-    const string2 = getTarget();
-    const string3 = getSymbol();
-    const res = string1  + " " +string2 + " " + string3;
+    const res = getSalutation()  + " " + getTarget() + " " + getSymbol();
     console.log(res);   
 }
 
